@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface TransactionsRepository extends JpaRepository<Transactions,Long> {
-    @Query("select t from Transactions t where t.compte.codeCompte=:x order by o.dateOperation desc")
+    @Query("select t from Transactions t where t.compte.codeCompte=:x order by t.dateOperation desc")
     public Page<Transactions> listTransanctions(@Param("x") String code , Pageable pageable);
 }
