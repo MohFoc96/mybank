@@ -58,7 +58,7 @@ public class BanqueControllers {
         return banqueService.consulterCompte(compte.getCodeCompte());
     }
 
-    @PostMapping("/createRetrait")
+    @PostMapping("/virement")
     public void virement(@RequestBody Compte compte1, @RequestBody Compte compte2, @RequestParam double montant) {
         banqueService.virement(compte1.getCodeCompte(), compte2.getCodeCompte(), montant);
     }
